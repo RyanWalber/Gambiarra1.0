@@ -1,0 +1,23 @@
+#ifndef MOTORES_H
+#define MOTORES_H
+
+#include <robo_hardware2.h>
+
+class Motores {
+	private:
+    
+		#define VEL_FRENTE 80
+   
+		#define VEL_TRAS  -80
+
+	public:
+
+		inline void emFrente(){robo.acionarMotores(VEL_FRENTE, VEL_FRENTE);}
+		inline void direita() {robo.acionarMotores(VEL_TRAS, VEL_FRENTE);} 
+		inline void esquerda(){robo.acionarMotores(VEL_FRENTE, VEL_TRAS);}  
+		inline void paraTras(){robo.acionarMotores(VEL_TRAS, VEL_TRAS);}
+
+		inline void parar(int tempo){robo.acionarMotores(0, 0); delay(tempo);}
+};
+
+#endif
