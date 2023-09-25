@@ -5,7 +5,7 @@
 
 class Refletancia {
     private:
-        #define DIVISOR_BRANCO_PRETO 90
+        #define DIVISOR_BRANCO_PRETO 80
 
         float SensorLinhaEsq;
         float SensorLinhaDir; 
@@ -30,6 +30,9 @@ class Refletancia {
         inline bool   frente(){return (bbbb() || bppb() || pppp());}
         inline bool  direita(){return (pppb() || ppbb() || pbbb() || bpbb());}
         inline bool esquerda(){return (bppp() || bbpp() || bbpb() || bbbp());}
+        
+        inline bool  desalinhou_direita(){return (bppp() || bbpp() || bbpb() || bbbp());}
+        inline bool desalinhou_esquerda(){return (pppb() || ppbb() || pbbb() || bpbb() );}
         
         void atualizarSensoresRefletancia();
 };

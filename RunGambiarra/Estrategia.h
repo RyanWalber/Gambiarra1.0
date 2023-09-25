@@ -17,6 +17,7 @@ class Estrategia {
     	void seguirLinha();
 
       void desviarObstaculo();
+      void alinharObstaculo();
 
       Refletancia sensoresLinha;
       Motores motores;

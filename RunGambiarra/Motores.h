@@ -18,6 +18,8 @@ class Motores {
 		inline void paraTras(){robo.acionarMotores(VEL_TRAS, VEL_TRAS);}
 
 		inline void parar(int tempo){robo.acionarMotores(0, 0); delay(tempo);}
+
+    inline void girar90Dir(int tempo){robo.acionarMotores(80, -80); delay(tempo);}
 };
 
 #endif

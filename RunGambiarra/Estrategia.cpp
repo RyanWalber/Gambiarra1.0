@@ -20,19 +20,37 @@ void Estrategia::seguirLinha(){
   }
 
 void Estrategia::desviarObstaculo(){
-    //em andamento...
     
+    
+}
+
+void Estrategia::alinharObstaculo(){
+  sensoresLinha.atualizarSensoresRefletancia();
+  
+  if(sensoresLinha.desalinhou_direita()){
+     robo.acionarMotores(-80, 80); 
+  }
+  else if(sensoresLinha.desalinhou_esquerda()){
+     robo.acionarMotores(80, -80); 
+  }
+  else if(sensoresLinha.pppp()){
+    robo.acionarMotores(0, 0);
+  }
+  else{
+    robo.acionarMotores(-80, -80); 
+  }
+       
 }
 
 void Estrategia::executar(){
   
-/*  sonar.atualizarSensorSonar();
+  sonar.atualizarSensorSonar();
   
   if(sonar.getSensorSonar() <= 8){
     desviarObstaculo();
-    }
-  else{*/
-    seguirLinha();
-    //}
+  }
+  else{
+    alinharObstaculo();
+  }
  
 }

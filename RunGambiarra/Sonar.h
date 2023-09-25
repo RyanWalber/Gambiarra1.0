@@ -12,7 +12,7 @@ class Sonar {
 
         void atualizarSensorSonar();
 
-        float getSensorSonar();
+        inline float getSensorSonar() {return (SensorSonar);}
  
 };
 		
