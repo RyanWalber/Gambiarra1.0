@@ -5,7 +5,7 @@ Estrategia estrategia;
 
 void setup() {
   robo.configurar(false);
-
+  Serial.begin(9600);
 }
 
 void loop() {

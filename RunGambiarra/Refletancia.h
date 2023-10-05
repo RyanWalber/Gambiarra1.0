@@ -27,6 +27,11 @@ class Refletancia {
         inline bool bbbp() {return (SensorLinhaMaisEsq>DIVISOR_BRANCO_PRETO && SensorLinhaEsq>DIVISOR_BRANCO_PRETO && SensorLinhaDir>DIVISOR_BRANCO_PRETO && SensorLinhaMaisDir<DIVISOR_BRANCO_PRETO);}
         inline bool bbbb() {return (SensorLinhaMaisEsq>DIVISOR_BRANCO_PRETO && SensorLinhaEsq>DIVISOR_BRANCO_PRETO && SensorLinhaDir>DIVISOR_BRANCO_PRETO && SensorLinhaMaisDir>DIVISOR_BRANCO_PRETO);}
 
+        inline bool pp() {return (SensorLinhaEsq<DIVISOR_BRANCO_PRETO && SensorLinhaDir<DIVISOR_BRANCO_PRETO);}
+        inline bool pb() {return (SensorLinhaEsq<DIVISOR_BRANCO_PRETO && SensorLinhaDir>DIVISOR_BRANCO_PRETO);}
+        inline bool bp() {return (SensorLinhaEsq>DIVISOR_BRANCO_PRETO && SensorLinhaDir<DIVISOR_BRANCO_PRETO);}
+        inline bool bb() {return (SensorLinhaEsq>DIVISOR_BRANCO_PRETO && SensorLinhaDir>DIVISOR_BRANCO_PRETO);}
+
         inline bool   frente(){return (bbbb() || bppb() || pppp());}
         inline bool  direita(){return (pppb() || ppbb() || pbbb() || bpbb());}
         inline bool esquerda(){return (bppp() || bbpp() || bbpb() || bbbp());}

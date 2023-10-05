@@ -3,6 +3,7 @@
 void Estrategia::seguirLinha(){
 
     sensoresLinha.atualizarSensoresRefletancia();
+    robo.habilitaTCS34();
 
     if(sensoresLinha.frente()){
       motores.emFrente();
@@ -16,7 +17,20 @@ void Estrategia::seguirLinha(){
     else if(sensoresLinha.esquerda()){
       motores.esquerda();
       delay(100);
-    }      
+    } 
+    else if(sensoresLinha.pppp()){
+      motores.parar(100);
+      motores.emFrente();
+      delay(150);
+      motores.parar(1000);
+      
+      sensorCor.atualizarSensoresCor();
+      if(!sensorCor.BrancoEsq()){
+        Serial.println("EU TÔ VENDO VERDE");
+        motores.direita();
+        delay(1000);
+    }
+    }     
   }
 
 void Estrategia::desviarObstaculo(){
@@ -38,13 +52,13 @@ void Estrategia::desviarObstaculo(){
   }
 
   motores.emFrente();
-  delay(2000);
-  motores.girar90Esq();
-  motores.emFrente();
   delay(3000);
   motores.girar90Esq();
   motores.emFrente();
-  delay(500);
+  delay(5000);
+  motores.girar90Esq();
+  motores.emFrente();
+  delay(1250);
 
    while(!sensoresLinha.pppp()){
       sensoresLinha.atualizarSensoresRefletancia();
@@ -56,7 +70,7 @@ void Estrategia::desviarObstaculo(){
          motores.direita();
       }
       else{
-      motores.emFrente();
+      motores.paraTras();
       }
   }
   motores.emFrente();
@@ -68,11 +82,10 @@ void Estrategia::executar(){
   
   sonar.atualizarSensorSonar();
   
-  if(sonar.getSensorSonar() <= 4){
+  if(sonar.getSensorSonar() <= 7){
     desviarObstaculo();
   }
   else{
     seguirLinha();
   }
- 
 }

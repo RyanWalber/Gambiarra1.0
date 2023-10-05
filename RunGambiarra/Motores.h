@@ -6,21 +6,21 @@
 class Motores {
 	private:
     
-		#define VEL_FRENTE 80
+		#define VEL_FRENTE -80
    
-		#define VEL_TRAS  -80
+		#define VEL_TRAS  80
 
 	public:
 
-		inline void emFrente(){robo.acionarMotores(VEL_FRENTE, VEL_FRENTE);}
+		inline void emFrente(){robo.acionarMotores(80, 80);}
 		inline void direita() {robo.acionarMotores(VEL_TRAS, VEL_FRENTE);} 
 		inline void esquerda(){robo.acionarMotores(VEL_FRENTE, VEL_TRAS);}  
-		inline void paraTras(){robo.acionarMotores(VEL_TRAS, VEL_TRAS);}
+		inline void paraTras(){robo.acionarMotores(-80, -80);}
 
 		inline void parar(int tempo){robo.acionarMotores(0, 0); delay(tempo);}
 
-    inline void girar90Dir(){robo.acionarMotores(80, -80); delay(1500);}
-    inline void girar90Esq(){robo.acionarMotores(-80, 80); delay(1500);}
+    inline void girar90Dir(){robo.acionarMotores(80, -80); delay(2200);}
+    inline void girar90Esq(){robo.acionarMotores(-80, 80); delay(2200);}
     
 };
 

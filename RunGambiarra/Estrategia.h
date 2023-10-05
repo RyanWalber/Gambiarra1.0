@@ -5,7 +5,7 @@
 #include "Motores.h"
 #include "Refletancia.h"
 #include "Sonar.h"
-
+#include "MeuSensorCor.h"
 
 class Estrategia {
 	public:
@@ -21,6 +21,7 @@ class Estrategia {
       Refletancia sensoresLinha;
       Motores motores;
       Sonar sonar;
+      MeuSensorCor sensorCor;
 };
 
 #endif
